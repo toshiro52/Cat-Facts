@@ -1,4 +1,4 @@
-package com.example.catfacts
+package com.example.catfacts.Fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

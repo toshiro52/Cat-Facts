@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Cat facts</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="fact_id_prefix">Fact ID: </string>
+    <string name="update_date">Updated at: </string>
 </resources>

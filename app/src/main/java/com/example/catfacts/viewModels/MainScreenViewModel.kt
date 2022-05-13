@@ -1,4 +1,4 @@
-package com.example.catfacts
+package com.example.catfacts.viewModels
 
 import androidx.lifecycle.ViewModel
 
