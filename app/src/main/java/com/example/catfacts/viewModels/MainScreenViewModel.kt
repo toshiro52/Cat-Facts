@@ -1,5 +1,6 @@
 package com.example.catfacts.viewModels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,10 +22,12 @@ class MainScreenViewModel(private val repository: CatFactsRepository) : ViewMode
     fun getCatFacts() {
         viewModelScope.launch {
             try{
-                _catFactList.value = repository.getFacts()
+                val result = repository.getFacts()
+                _catFactList.value = result
+                Log.d("TAG", "Retrieved ${result.size} facts")
             }
             catch(e: Exception) {
-
+                Log.d("TAG", "ERROR")
             }
         }
     }
