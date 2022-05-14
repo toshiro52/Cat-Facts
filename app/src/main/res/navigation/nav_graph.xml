@@ -18,5 +18,12 @@
         android:id="@+id/detailScreenFragment"
         android:name="com.example.catfacts.Fragments.DetailScreenFragment"
         android:label="detail_screen_fragment"
-        tools:layout="@layout/detail_screen_fragment" />
+        tools:layout="@layout/detail_screen_fragment" >
+        <argument
+            android:name="catFactText"
+            app:argType="string" />
+        <argument
+            android:name="catFactUpdateDate"
+            app:argType="string" />
+    </fragment>
 </navigation>
