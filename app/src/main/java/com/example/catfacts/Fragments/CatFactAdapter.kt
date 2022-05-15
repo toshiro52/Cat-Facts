@@ -1,6 +1,5 @@
 package com.example.catfacts.Fragments
 
-import android.app.ActionBar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

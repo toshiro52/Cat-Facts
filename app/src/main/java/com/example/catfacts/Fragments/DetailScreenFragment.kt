@@ -24,7 +24,7 @@ class DetailScreenFragment : Fragment() {
         _binding = DetailScreenFragmentBinding.inflate(inflater, container, false)
 
         binding.factText.text = catFactText
-        binding.factUpdateText.text = catFactUpdateDate
+        binding.factUpdateText.text = catFactUpdateDate.substring(0,10)
 
         return binding.root
     }
