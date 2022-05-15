@@ -10,10 +10,15 @@ import com.example.catfacts.network.CatFactsRepository
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
+enum class ApiServiceStatus { LOADING, ERROR, DONE}
+
 class MainScreenViewModel(private val repository: CatFactsRepository) : ViewModel() {
 
     private var _catFactList = MutableLiveData<List<CatFact>>()
     val catFactList: LiveData<List<CatFact>> = _catFactList
+
+    private var _status = MutableLiveData<ApiServiceStatus>()
+    val status: LiveData<ApiServiceStatus> = _status
 
     init {
         getCatFacts()
@@ -21,13 +26,15 @@ class MainScreenViewModel(private val repository: CatFactsRepository) : ViewMode
 
     fun getCatFacts() {
         viewModelScope.launch {
+            _status.value = ApiServiceStatus.LOADING
             try{
                 val result = repository.getFacts()
                 _catFactList.value = result
-                Log.d("TAG", "Retrieved ${result.size} facts")
+                _status.value = ApiServiceStatus.DONE
             }
             catch(e: Exception) {
-                Log.d("TAG", "ERROR")
+                _status.value = ApiServiceStatus.ERROR
+                _catFactList.value = listOf()
             }
         }
     }

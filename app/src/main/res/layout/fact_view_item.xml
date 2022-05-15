@@ -18,6 +18,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
+            android:src="@drawable/icons8_cat_profile_50"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
